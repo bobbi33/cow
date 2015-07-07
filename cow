@@ -1,0 +1,30 @@
+#include "stdafx.h"
+
+int new_cow(int y){
+	int c = 0;
+	int old = 1;
+
+	for(c=1; c<= y; c++){
+		if(c>=4){
+			if((y-c) > 3){
+				old += new_cow(y-c);
+			}else{
+				old++;
+			}
+		}
+	}
+	return old;
+}
+
+int main(){
+
+	int y = 0;
+	scanf("%d",&y);
+
+	printf("%d", new_cow(y));
+
+
+
+	return 0;
+}
+
